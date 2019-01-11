@@ -1,0 +1,7 @@
+ARG_ENABLE('thunkit', 'thunkit support', 'no');
+
+if (PHP_THUNKIT != 'no') {
+	AC_DEFINE('HAVE_THUNKIT', 1, 'thunkit support enabled');
+
+	EXTENSION('thunkit', 'thunkit.c', null, '/DZEND_ENABLE_STATIC_TSRMLS_CACHE=1');
+}
